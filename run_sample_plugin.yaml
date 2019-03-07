@@ -1,0 +1,18 @@
+sonobuoy-config:
+  driver: Job
+  plugin-name: run_sample_plugin
+  result-type: run_sample_plugin
+
+spec:
+  env:
+  - name: RESULTS_DIR
+    value: /tmp/results
+  image: hub.docker.com/r/jiatongw/run:latest
+  imagePullPolicy: Always
+  volumeMounts:
+  - mountPath: /tmp/results
+    name: results
+    readOnly: false
+  - mountPath: /node
+    name: root
+    readOnly: false
