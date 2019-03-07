@@ -1,6 +1,6 @@
 FROM buildpack-deps:jessie-scm
 
-COPY run_local.sh /run.sh
+COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
 CMD ["./run.sh"]

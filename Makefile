@@ -1,18 +1,18 @@
-REGISTRY ?= hub.docker.com/r/jiatongw
-IMAGE = $(REGISTRY)/run
+REGISTRY ?= jiatongw
+IMAGE = $(REGISTRY)/sample
 DOCKER ?= docker
 
 all: container
 
 container: run.sh
-	$(DOCKER) build -t $(REGISTRY)/run:latest .
+	$(DOCKER) build -t $(REGISTRY)/sample:latest .
 
 push:
-	$(DOCKER) push $(REGISTRY)/run:latest
+	$(DOCKER) push $(REGISTRY)/sample:latest
 
 .PHONY: all container push
 
 clean:
-	$(DOCKER) rmi $(REGISTRY)/run:latest  || true
+	$(DOCKER) rmi $(REGISTRY)/sample:latest  || true
 
 
